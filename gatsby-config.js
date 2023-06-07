@@ -9,16 +9,13 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Ah young`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `ah young `,
+      summary: `더 나은 개발자가 되기 위한 기술 블로그 `,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `더 나은 개발자가 되기 위한 기술 블로그`,
+    siteUrl: `https://guahyoung.github.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,
