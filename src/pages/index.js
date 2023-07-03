@@ -14,9 +14,9 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
+          {/* No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          gatsby-config.js). */}
         </p>
       </Layout>
     )
@@ -38,7 +38,11 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.fields.slug} itemProp="url">
+                    <Link
+                      to={post.fields.slug}
+                      itemProp="url"
+                      style={{ color: "#111111", textDecoration: "none" }}
+                    >
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
