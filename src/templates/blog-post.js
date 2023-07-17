@@ -4,12 +4,19 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Disqus } from "gatsby-plugin-disqus"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
   location,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
+
+  const disqusConfig = {
+    identifier: post.id,
+    title: post.frontmatter.title,
+    url: `https://ahyoungblog.netlify.app${post.fields.slug}`,
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -65,6 +72,7 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
+      <Disqus config={disqusConfig} />
     </Layout>
   )
 }
@@ -97,7 +105,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MM DD, YYYY")
         description
       }
     }
