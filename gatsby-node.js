@@ -25,7 +25,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fields {
             slug
           }
-          html
         }
       }
     }
@@ -111,8 +110,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
       fields: Fields
-      excerpt : String
-      html : String
     }
 
     type Frontmatter {
@@ -123,6 +120,12 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Fields {
       slug: String
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+      fields: Fields
+      excerpt: string
     }
   `)
 }

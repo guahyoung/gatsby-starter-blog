@@ -120,6 +120,7 @@ module.exports = {
     },
   ],
 }
+// gatsby-config.js
 module.exports = {
   plugins: [
     {
